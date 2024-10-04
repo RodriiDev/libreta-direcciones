@@ -1,1 +1,1 @@
-# libreta-direcciones
+# Hola, esta es mi prueba realizada sobre una app de libreta de direcciones, la cual esta desarrollada con Angular y Laravel.
