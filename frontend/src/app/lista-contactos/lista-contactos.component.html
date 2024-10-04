@@ -21,16 +21,16 @@
         </tr>
       </thead>
       <tbody>
-         @for (contact of searchContacts() ; track contact.id){
+         @for (contacto of contactos ; track contacto.id){
           <tr>
-            <td>{{ contact.id }}</td>
-            <td>{{ contact.name }}</td>
-            <td>{{ contact.email }}</td>
-            <td>{{ contact.phone }}</td>
+            <td>{{ contacto.id }}</td>
+            <td>{{ contacto.name }}</td>
+            <td>{{ contacto.email }}</td>
+            <td>{{ contacto.phone }}</td>
             <td>
               <button class="btn btn-primary btn-sm me-1" >Ver</button>
               <button class="btn btn-warning btn-sm me-1" >Editar</button>
-              <button class="btn btn-danger btn-sm" (click)="deleteContact(contact)">Eliminar</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteContact(contacto)">Eliminar</button>
             </td>
           </tr>
         }
