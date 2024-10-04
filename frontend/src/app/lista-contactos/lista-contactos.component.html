@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Lista de Contactos</h2>
+    </div>
+  
+    <!--Busqueda-->
+    <div class="input-group mb-3 mt-3">
+      <input type="text" class="form-control" placeholder="Buscar contacto...">
+      <button class="btn btn-outline-secondary" type="button">Buscar</button>
+    </div>
+  
+    <!--Tabla de contactos-->
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+         @for (contact of searchContacts() ; track contact.id){
+          <tr>
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm me-1" >Ver</button>
+              <button class="btn btn-warning btn-sm me-1" >Editar</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteContact(contact)">Eliminar</button>
+            </td>
+          </tr>
+        }
+        <!-- Mostrar mensaje si no hay contactos -->
+         @if(searchContacts().length === 0){
+          <tr>
+            <td colspan="5" class="text-center">No se encontraron contactos.</td>
+          </tr>
+         }
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,64 @@
+<div class="container mt-5">
+    <h3>Añadir Nuevo Contacto</h3>
+    
+    <form>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="name" class="form-label">Nombre*</label>
+          <input type="text" id="name" class="form-control" name="name" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="notes" class="form-label">Notas</label>
+          <textarea id="notes" class="form-control" name="notes"></textarea>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="birthday" class="form-label">Fecha de Cumpleaños</label>
+          <input type="date" id="birthday" class="form-control" name="birthday">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="website" class="form-label">Página Web</label>
+          <input type="url" id="website" class="form-control" name="website">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="company" class="form-label">Empresa</label>
+          <input type="text" id="company" class="form-control" name="company">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="phones" class="form-label">Números de Teléfono</label>
+          <div class="d-flex align-items-center mb-2">
+            <input type="text" class="form-control me-2">
+            <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm">Añadir otro número</button>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="emails" class="form-label">Emails</label>
+          <div class="d-flex align-items-center mb-2">
+            <input type="email" class="form-control me-2">
+            <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm">Añadir otro email</button>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="addresses" class="form-label">Direcciones</label>
+          <div class="d-flex align-items-center mb-2">
+            <input type="text" class="form-control me-2">
+            <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm">Añadir otra dirección</button>
+        </div>
+      </div>
+  
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary me-2">Guardar</button>
+      </div>
+    </form>
+  </div>
