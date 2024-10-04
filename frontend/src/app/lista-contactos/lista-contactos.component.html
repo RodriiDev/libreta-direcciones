@@ -24,9 +24,9 @@
          @for (contacto of contactos ; track contacto.id){
           <tr>
             <td>{{ contacto.id }}</td>
-            <td>{{ contacto.name }}</td>
-            <td>{{ contacto.email }}</td>
-            <td>{{ contacto.phone }}</td>
+            <td>{{ contacto.nombre }}</td>
+            <td>{{ contacto.pagina_web }}</td>
+            <td>{{ contacto.cumpleanos }}</td>
             <td>
               <button class="btn btn-primary btn-sm me-1" >Ver</button>
               <button class="btn btn-warning btn-sm me-1" >Editar</button>
@@ -35,7 +35,7 @@
           </tr>
         }
         <!-- Mostrar mensaje si no hay contactos -->
-         @if(searchContacts().length === 0){
+         @if(contactos.length === 0){
           <tr>
             <td colspan="5" class="text-center">No se encontraron contactos.</td>
           </tr>

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ContactoService {
 
-  private apiUrl = 'http://localhost:8000/api/contacts';
+  private apiUrl = 'http://localhost:8000/api/contactos';
 
   constructor(private http: HttpClient) { }
 

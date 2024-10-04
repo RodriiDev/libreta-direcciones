@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('notas');
-            $table->date('cumpleaños');
+            $table->date('cumpleanos');
             $table->string('pagina_web');
             $table->string('empresa');
             $table->timestamps();
