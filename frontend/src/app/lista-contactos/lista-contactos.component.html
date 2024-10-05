@@ -33,7 +33,7 @@
             <td>
               <button class="btn btn-primary btn-sm me-1" (click)="viewContact(contacto.id)"><span class="material-symbols-outlined icon-btn-align">visibility</span> Ver</button>
               <button class="btn btn-warning btn-sm me-1" (click)="editContact(contacto.id)"><span class="material-symbols-outlined icon-btn-align">edit</span> Editar</button>
-              <button class="btn btn-danger btn-sm" (click)="deleteContact(contacto)"><span class="material-symbols-outlined icon-btn-align">delete</span> Eliminar</button>
+              <button class="btn btn-danger btn-sm" (click)="confirmDelete(contacto.id)"><span class="material-symbols-outlined icon-btn-align">delete</span> Eliminar</button>
             </td>
           </tr>
         }

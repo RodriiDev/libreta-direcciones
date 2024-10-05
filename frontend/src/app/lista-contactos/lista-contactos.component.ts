@@ -47,18 +47,33 @@ export class ListaContactosComponent {
     });
   }
 
-  // Método para redirigir a la página de edición de contactos
+  // Redirigir a la página de edición de contactos
   editContact(id: number): void {
-    this.router.navigate(['/contacto/edit', id]); // Redirigir a la ruta de edición con el id del contacto
+    this.router.navigate(['/contacto/edit', id]);
   }
   viewContact(id: number): void {
     this.router.navigate(['/contacto/view', id]); // Redirigir a la ruta de ver
   }
 
-  deleteContact(id: number): void {
-    this.contactoService.deleteContact(id).subscribe(() => {
-      this.contactos = this.contactos.filter(contacto => contacto.id !== id);
-    });
+  //Confirmar y eliminar el contacto
+  confirmDelete(contactId: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este contacto?')) {
+      this.borrarContacto(contactId);
+    }
+  }
+
+  // Método para eliminar el contacto
+  borrarContacto(contactId: number): void {
+    this.contactoService.deleteContact(contactId).subscribe(
+      (response) => {
+        console.log('Contacto eliminado con éxito:', response);
+        this.searchControl.setValue('');
+        this.loadContacts();
+      },
+      (error) => {
+        console.error('Error al eliminar el contacto:', error);
+      }
+    );
   }
 
   
