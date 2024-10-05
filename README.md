@@ -52,7 +52,7 @@ Nota que se tiene opciones en el header para ir a home y crear un nuevo contacto
 
 **La vista donde se dará de alta o editará un contacto se verá así:**
 
-(Único campo obligatorio es el nombre: )
+(Único campo obligatorio es el nombre)
 
 ![Contactos](./frontend/contactosalta.PNG)
 
