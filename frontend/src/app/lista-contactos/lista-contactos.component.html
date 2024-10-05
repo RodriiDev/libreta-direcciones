@@ -28,8 +28,8 @@
             <td>{{ contacto.pagina_web }}</td>
             <td>{{ contacto.cumpleanos }}</td>
             <td>
-              <button class="btn btn-primary btn-sm me-1" >Ver</button>
-              <button class="btn btn-warning btn-sm me-1" >Editar</button>
+              <button class="btn btn-primary btn-sm me-1" (click)="viewContact(contacto.id)">Ver</button>
+              <button class="btn btn-warning btn-sm me-1" (click)="editContact(contacto.id)">Editar</button>
               <button class="btn btn-danger btn-sm" (click)="deleteContact(contacto)">Eliminar</button>
             </td>
           </tr>

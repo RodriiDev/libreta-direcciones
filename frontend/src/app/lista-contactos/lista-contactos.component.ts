@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ContactoService } from '../services/contacto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-contactos',
@@ -10,20 +11,22 @@ import { ContactoService } from '../services/contacto.service';
 })
 export class ListaContactosComponent {
 
-  /* contacts = [
-    { id: 1, name: 'Rodrigo Soto', email: 'r@mail.com', phone: '123-456-7890' },
-    { id: 2, name: 'Mariana Soto', email: 'm@mail.com', phone: '098-765-4321' },
-    { id: 3, name: 'Alejando M', email: 'a@mail.com', phone: '567-890-1234' }
-  ]; */
-
   contactos: any[] = [];
 
-  constructor(private contactoService: ContactoService) { }
+  constructor(private contactoService: ContactoService, private router: Router) { }
 
   ngOnInit(): void {
     this.contactoService.getContacts().subscribe(data => {
       this.contactos = data;
     });
+  }
+
+  // Método para redirigir a la página de edición de contactos
+  editContact(id: number): void {
+    this.router.navigate(['/contacto/edit', id]); // Redirigir a la ruta de edición con el id del contacto
+  }
+  viewContact(id: number): void {
+    this.router.navigate(['/contacto/view', id]); // Redirigir a la ruta de ver
   }
 
   deleteContact(id: number): void {

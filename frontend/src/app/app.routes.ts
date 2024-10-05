@@ -5,5 +5,7 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
 export const routes: Routes = [
     { path: 'nuevo-contacto', component: ContactoComponent },
     { path: 'lista-contactos', component: ListaContactosComponent },
-    { path: '', redirectTo: 'lista-contactos', pathMatch:'full'}
+    { path: '', redirectTo: 'lista-contactos', pathMatch:'full'},
+    { path: 'contacto/edit/:id', component: ContactoComponent },
+    { path: 'contacto/view/:id', component: ContactoComponent }
 ];

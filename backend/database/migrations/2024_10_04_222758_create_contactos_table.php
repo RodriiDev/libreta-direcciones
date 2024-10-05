@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('contactos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('notas');
-            $table->date('cumpleanos');
-            $table->string('pagina_web');
-            $table->string('empresa');
+            $table->string('notas')->nullable();
+            $table->date('cumpleanos')->nullable();
+            $table->string('pagina_web')->nullable();
+            $table->string('empresa')->nullable();
             $table->timestamps();
         });
     }
