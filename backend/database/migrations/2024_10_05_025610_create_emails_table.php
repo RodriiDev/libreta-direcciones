@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('emails', function (Blueprint $table) {
             $table->id();
             $table->string('email');
-            $table->integer('id_contacto');
+            $table->integer('contacto_id');
             $table->timestamps();
         });
     }

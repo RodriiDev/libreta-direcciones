@@ -35,34 +35,19 @@
   
       <div class="row">
         <div class="col-md-4 mb-3">
-            <label for="phones" class="form-label">Números de Teléfono</label>
-            <div class="d-flex align-items-center mb-2">
-              <input type="text" class="form-control me-2" [disabled]="isViewMode">
-              @if(!isViewMode){
-              <button type="button" class="btn btn-danger btn-sm"><span class="material-symbols-outlined">delete</span></button>
-              <button type="button" class="btn btn-secondary btn-sm"><span class="material-symbols-outlined">add</span></button>
-              }
-            </div>
+            <label for="telefonos" class="form-label">Números de Teléfono </label>
+            <input type="text"  [(ngModel)]="contacto.telefonos[0].telefono" class="form-control me-2 mb-2" [disabled]="isViewMode" placeholder="Ingresa un numero de telefono">    
+            <input type="text"  [(ngModel)]="contacto.telefonos[1].telefono" class="form-control me-2" [disabled]="isViewMode" placeholder="Ingresa un numero de telefono">        
           </div>
         <div class="col-md-4 mb-3">
           <label for="emails" class="form-label">Emails</label>
-          <div class="d-flex align-items-center mb-2">
-            <input type="email" class="form-control me-2" [disabled]="isViewMode">
-            @if(!isViewMode){
-            <button type="button" class="btn btn-danger btn-sm"><span class="material-symbols-outlined">delete</span></button>
-            <button type="button" class="btn btn-secondary btn-sm"><span class="material-symbols-outlined">add</span></button>
-            }
-          </div>
+            <input type="text"  [(ngModel)]="contacto.emails[0].email" class="form-control me-2 mb-2" [disabled]="isViewMode" placeholder="Ingresa un email">    
+            <input type="text"  [(ngModel)]="contacto.emails[1].email" class="form-control me-2" [disabled]="isViewMode" placeholder="Ingresa un email">    
         </div>
         <div class="col-md-4 mb-3">
-          <label for="addresses" class="form-label">Direcciones</label>
-          <div class="d-flex align-items-center mb-2">
-            <input type="text" class="form-control me-2" [disabled]="isViewMode">
-            @if(!isViewMode){
-            <button type="button" class="btn btn-danger btn-sm"><span class="material-symbols-outlined">delete</span></button>
-            <button type="button" class="btn btn-secondary btn-sm"><span class="material-symbols-outlined">add</span></button>
-            }
-          </div>
+          <label for="direcciones" class="form-label">Direcciones</label>
+            <input type="text"  [(ngModel)]="contacto.direcciones[0].direccion" class="form-control me-2 mb-2" [disabled]="isViewMode" placeholder="Ingresa una direccion">    
+            <input type="text"  [(ngModel)]="contacto.direcciones[1].direccion" class="form-control me-2" [disabled]="isViewMode" placeholder="Ingresa una dirección">                
         </div>
       </div>
   

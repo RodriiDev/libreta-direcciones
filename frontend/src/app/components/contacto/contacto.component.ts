@@ -17,7 +17,19 @@ export class ContactoComponent {
     notas: '',
     cumpleanos: '',
     pagina_web: '',
-    empresa: ''
+    empresa: '',
+    telefonos: [
+      { telefono: '' },
+      { telefono: '' } 
+    ],
+    emails: [
+      { email: '' },
+      { email: '' } 
+    ],
+    direcciones: [
+      { direccion: '' },
+      { direccion: '' } 
+    ]
   };
 
   isEditMode = false; // Para determinar si estamos en modo de edición o no
@@ -51,6 +63,28 @@ export class ContactoComponent {
   loadContact(id: number): void {
     this.contactoService.getContact(id).subscribe((contacto) => {
       this.contacto = contacto; // Llenar el formulario con los datos del contacto
+      console.log(this.contacto);
+
+      if (!this.contacto.telefonos || this.contacto.telefonos.length === 0) {
+        this.contacto.telefonos = [{ telefono: '' }, { telefono: '' }];
+      }
+      else if(this.contacto.telefonos.length === 1){
+        this.contacto.telefonos.push({ telefono: '' });
+      }
+
+      if (!this.contacto.emails || this.contacto.emails.length === 0) {
+        this.contacto.emails = [{ email: '' }, { email: '' }];
+      }
+      else if(this.contacto.emails.length === 1){
+        this.contacto.emails.push({ email: '' });
+      }
+
+      if (!this.contacto.direcciones || this.contacto.direcciones.length === 0) {
+        this.contacto.direcciones = [{ direccion: '' }, { direccion: '' }];
+      }
+      else if(this.contacto.direcciones.length === 1){
+        this.contacto.direcciones.push({ direccion: '' });
+      }
     });
   }
 

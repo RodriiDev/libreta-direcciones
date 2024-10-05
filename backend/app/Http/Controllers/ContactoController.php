@@ -20,7 +20,7 @@ class ContactoController extends Controller
         ->orWhere('cumpleanos', 'like', '%' . $searchTerm . '%')
         ->orWhere('pagina_web', 'like', '%' . $searchTerm . '%')
         ->orWhere('empresa', 'like', '%' . $searchTerm . '%')
-        ->orderBy('created_at', 'desc')->limit(500)->get();
+        ->orderBy('created_at', 'desc')->limit(300)->get();
 
         return response()->json([
             'data' => $contactos
@@ -40,7 +40,34 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
+
         $contacto = Contacto::create($request->all());
+
+        // Guardar los teléfonos
+       
+        foreach ($request->input('telefonos') as $telefono) {
+            if($telefono['telefono'] != ''){
+                $contacto->telefonos()->create([
+                    'telefono' => $telefono['telefono']
+                ]);
+            }    
+        }
+        // Guardar los emails
+        foreach ($request->input('emails') as $em) {
+            if($em['email'] != ''){
+                $contacto->emails()->create([
+                    'email' => $em['email']
+                ]);
+            }
+        }
+        // Guardar las direcciones
+        foreach ($request->input('direcciones') as $dir) {
+            if($dir['direccion'] != ''){
+                $contacto->direcciones()->create([
+                    'direccion' => $dir['direccion']
+                ]);
+            }
+        }
         return response()->json($contacto, 201);
     }
 
@@ -49,7 +76,7 @@ class ContactoController extends Controller
      */
     public function show(string $id)
     {
-        return Contacto::findOrFail($id);
+        return Contacto::with('telefonos','emails','direcciones')->findOrFail($id);
     }
 
     /**
@@ -67,6 +94,42 @@ class ContactoController extends Controller
     {
         $contacto = Contacto::findOrFail($id);
         $contacto->update($request->all());
+
+        $contacto->telefonos()->delete();
+        if ($request->has('telefonos')) {
+            foreach ($request->input('telefonos') as $telefono) {
+                if($telefono['telefono'] != ''){
+                    $contacto->telefonos()->create([
+                        'telefono' => $telefono['telefono']
+                    ]);
+                }
+                
+            }
+        }
+
+        $contacto->emails()->delete();
+        if ($request->has('emails')) {
+            foreach ($request->input('emails') as $em) {
+                if($em['email'] != ''){
+                    $contacto->emails()->create([
+                        'email' => $em['email']
+                    ]);
+                }
+            }
+        }
+
+        $contacto->direcciones()->delete();
+        if ($request->has('direcciones')) {
+            foreach ($request->input('direcciones') as $dir) {
+                if($dir['direccion'] != ''){
+                    $contacto->direcciones()->create([
+                        'direccion' => $dir['direccion']
+                    ]);
+                }
+            }
+        }
+
+
         return response()->json($contacto, 200);
     }
 
@@ -76,6 +139,9 @@ class ContactoController extends Controller
     public function destroy($id)
     {
         $contacto = Contacto::findOrFail($id);
+        $contacto->emails()->delete();
+        $contacto->telefonos()->delete();
+        $contacto->direcciones()->delete();
         $contacto->delete();
 
         return response()->json(['message' => 'Contacto eliminado con éxito'], 200);
