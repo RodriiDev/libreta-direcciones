@@ -10,9 +10,16 @@ class ContactoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Contacto::all();
+        $searchTerm = $request->input('search', '');
+
+        $contactos = Contacto::where('nombre', 'like', '%' . $searchTerm . '%')->
+        orderBy('created_at', 'desc')->limit(10)->get();
+
+        return response()->json([
+            'data' => $contactos
+        ]);
     }
 
     /**

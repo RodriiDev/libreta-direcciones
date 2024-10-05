@@ -5,8 +5,7 @@
   
     <!--Busqueda-->
     <div class="input-group mb-3 mt-3">
-      <input type="text" class="form-control" placeholder="Buscar contacto...">
-      <button class="btn btn-outline-secondary" type="button">Buscar</button>
+      <input type="text" class="form-control" placeholder="Buscar contacto (escribe al menos 3 letras para que se refleje la busqueda)..." [formControl]="searchControl">
     </div>
   
     <!--Tabla de contactos-->

@@ -11,8 +11,9 @@ export class ContactoService {
 
   constructor(private http: HttpClient) { }
 
-  getContacts(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getContacts(searchTerm: string = ''): Observable<any> {
+    const params = { search: searchTerm};
+    return this.http.get<any>(this.apiUrl, { params });
   }
 
   getContact(id: number): Observable<any> {
