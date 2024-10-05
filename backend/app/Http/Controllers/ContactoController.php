@@ -14,8 +14,13 @@ class ContactoController extends Controller
     {
         $searchTerm = $request->input('search', '');
 
-        $contactos = Contacto::where('nombre', 'like', '%' . $searchTerm . '%')->
-        orderBy('created_at', 'desc')->limit(10)->get();
+        $contactos = Contacto::
+        where('nombre', 'like', '%' . $searchTerm . '%')
+        ->orWhere('notas', 'like', '%' . $searchTerm . '%')
+        ->orWhere('cumpleanos', 'like', '%' . $searchTerm . '%')
+        ->orWhere('pagina_web', 'like', '%' . $searchTerm . '%')
+        ->orWhere('empresa', 'like', '%' . $searchTerm . '%')
+        ->orderBy('created_at', 'desc')->limit(500)->get();
 
         return response()->json([
             'data' => $contactos
