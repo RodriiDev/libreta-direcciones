@@ -12,11 +12,11 @@ Composer
 Un gestor para MySql (Myql Workbench puede ser)
 ```
 
-Primeramente nos situamos en un directorio nuevo y lo clonamos con: git clone https://github.com/RodriiDev/libreta-direcciones.git
+Primeramente nos situamos en un directorio nuevo clonamos este repositorio: git clone https://github.com/RodriiDev/libreta-direcciones.git
 
 -Ahora nos situamos en la carpeta de backend, podemos hacer cd backend.
 
--Y corremos el comand php artisan serve (esto para que nos corra el servidor donde esta alojada la api de laravel, asegurarnos que se corrió en esta direccipon http://127.0.0.1:8000/)
+-Y corremos el comando php artisan serve (esto para que nos corra el servidor donde esta alojada la api de laravel, asegurarnos que se corrió en esta dirección http://127.0.0.1:8000/)
 
 -Ahora nos situamos en la carpeta de frontend, podemos regresar con cd .. y luego cd frontend
 
@@ -42,7 +42,7 @@ Nos creará las tablas correspondientes y 5000 registros de contactos.
 
 ### Como se tiene que ver nuestra app?
 
-La vista principal se verá como esto:
+**La vista principal se verá así:**
 
 ![Contactos](./frontend/listacontactos.PNG)
 
@@ -50,6 +50,7 @@ Aqui podras ver la lista de contactos, asi como editar, ver, y eliminar un conta
 
 Nota que se tiene opciones en el header para ir a home y crear un nuevo contacto.
 
-La vista donde se dará de alta o editará un contacto se verá así:
+**La vista donde se dará de alta o editará un contacto se verá así:**
+(Único campo obligatorio es el nombre: )
 
 ![Contactos](./frontend/contactosalta.PNG)
