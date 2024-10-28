@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center">
-      <h2>Lista de Contactos</h2>
+      <h2>Agenda de Contactos</h2>
     </div>
   
     <!--Busqueda-->
@@ -31,9 +31,9 @@
             <td>{{ contacto.pagina_web }}</td>
             <td>{{ contacto.empresa }}</td>
             <td>
-              <button class="btn btn-primary btn-sm me-1" (click)="viewContact(contacto.id)"><span class="material-symbols-outlined icon-btn-align">visibility</span></button>
-              <button class="btn btn-warning btn-sm me-1" (click)="editContact(contacto.id)"><span class="material-symbols-outlined icon-btn-align">edit</span></button>
-              <button class="btn btn-danger btn-sm" (click)="confirmDelete(contacto.id)"><span class="material-symbols-outlined icon-btn-align">delete</span></button>
+              <button class="btn btn-primary btn-sm me-1" title="Ver" (click)="viewContact(contacto.id)"><span class="material-symbols-outlined icon-btn-align">visibility</span></button>
+              <button class="btn btn-warning btn-sm me-1" title="Editar" (click)="editContact(contacto.id)"><span class="material-symbols-outlined icon-btn-align">edit</span></button>
+              <button class="btn btn-danger btn-sm" title="Eliminar" (click)="confirmDelete(contacto.id)"><span class="material-symbols-outlined icon-btn-align">delete</span></button>
             </td>
           </tr>
         }
