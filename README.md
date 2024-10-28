@@ -18,7 +18,12 @@ Primeramente nos situamos en un directorio nuevo clonamos este repositorio: git 
 
 -Y corremos el comando php artisan serve (esto para que nos corra el servidor donde esta alojada la api de laravel, asegurarnos que se corrió en esta dirección http://127.0.0.1:8000/)
 
--Ahora nos situamos en la carpeta de frontend, podemos regresar con cd .. y luego cd frontend
+-Ahora nos situamos en la carpeta de frontend, podemos regresar con cd .. y luego cd frontend y primero corremos los comandos de:
+
+```
+npm install
+npm install bootstrap
+```
 
 -Y corremos el comando ng serve (este nos va a correr la aplicacion en angular, por lo general esta en la dirección http://localhost:4200).
 
